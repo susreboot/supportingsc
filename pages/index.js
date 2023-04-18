@@ -1,8 +1,7 @@
 import Layout from "components/layout/Layout";
-
 import { Container, Grid, Typography, Avatar, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { createTheme } from '@material-ui/core/styles';
+import MyCard from 'components/card';
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -29,6 +28,7 @@ const About = () => {
       description="This is a Template using Next.js and Material-UI with Header and Footer."
     >
       <Container maxWidth="md">
+        
         <Typography
           variant="h1"
           align="center"
@@ -67,7 +67,10 @@ const About = () => {
         </Grid>
       </Container>
     </Layout>
+
+    
   );
 };
+
 
 export default About;

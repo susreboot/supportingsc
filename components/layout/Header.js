@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Menu, MenuItem, MenuList } from '@mui/material';
-import Link from "components/Link";
+import Link from '@mui/material/Link';
 import { routes } from "data/routes";
 
 const Header = () => {
@@ -22,16 +22,16 @@ const Header = () => {
     <AppBar position="static" sx={{ backgroundColor: '#065DB4' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-        <img src="/logo.jpg" alt="Supporting SC" width="350" height="180" />
+        <Link href="/"><img src="/logo.jpg" alt="Supporting SC" width="270" height="120" /></Link>
       </Typography>
       <Button color="inherit"><Link href="/" sx={{ fontSize: '1.2rem', color: 'white' }}>Home</Link></Button>
-        <Button color="inherit"><Link href="/about">About</Link></Button>
+        <Button color="inherit"><Link href="/about" sx={{ fontSize: '1.2rem', color: 'white' }}>About</Link></Button>
         <Button
           color="inherit"
           onMouseEnter={handleMenuOpen}
           onMouseLeave={handleMenuClose}
         >
-          <Link href="/resources">Resources</Link>
+          <Link href="/resources" sx={{ fontSize: '1.2rem', color: 'white' }}>Resources</Link>
         </Button>
           <Menu
           id="contact-menu"

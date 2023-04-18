@@ -9,7 +9,7 @@
     "@material-ui/icons": "^4.9.1",
     "@mui/material": "^5.12.0",
     "clsx": "^1.2.1",
-    "next": "latest",
+    "next": "^13.3.0",
     "prop-types": "latest",
     "react": "^18.2.0",
     "react-dom": "^18",

@@ -1,15 +1,14 @@
-import Link from "components/Link";
+// import Link from "components/Link";
+import Link from '@mui/material/Link';
 import { useRouter } from "next/router";
-
+import Button from '@mui/material/Button';
 import { makeStyles } from "@material-ui/core/styles";
-
 import { Container, Grid, Typography } from "@material-ui/core";
-
 import { routes } from "data/routes";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: '#065DB4',
     width: `100%`,
     position: "relative",
     overflow: "hidden",
@@ -18,16 +17,22 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     fontSize: "1.25em",
-    color: "#fff",
+    color: "#fff !important",
     "&:hover": {
       color: theme.palette.info.main,
     },
+    "& a": { // add more specific selector
+      color: "#fff !important",
+    },
   },
   copylight: {
-    color: "#fff",
+    color: "#fff !important",
     fontSize: "1em",
     "&:hover": {
       color: theme.palette.info.main,
+    },
+    "& a": { // add more specific selector
+      color: "#fff !important",
     },
   },
 }));
@@ -40,22 +45,9 @@ const Footer = () => {
     <footer className={classes.footer}>
       <Container maxWidth="lg">
         <Grid container spacing={3} justify="center">
-          {path.map(({ name, link }) => (
-            <Grid item key={link}>
-              <Link href={link}>
-                <Typography
-                  className={classes.link}
-                  style={{
-                    fontWeight: router.pathname === link && "bold",
-                    borderBottom:
-                      router.pathname === link && "1px solid #757ce8",
-                  }}
-                >
-                  {name}
-                </Typography>
-              </Link>
-            </Grid>
-          ))}
+        <Button color="inherit"><Link href="/" underline="none" sx={{ fontSize: '1.2rem', color: 'white', textDecoration: 'none' }}>Home</Link></Button>
+        <Button color="inherit"><Link href="/about" underline="none" sx={{ fontSize: '1.2rem', color: 'white' }}>About</Link></Button>
+        <Button color="inherit"><Link href="/allresources" underline="none" sx={{ fontSize: '1.2rem', color: 'white' }}>All Resources</Link></Button>
         </Grid>
         <Grid container direction="column" style={{ margin: "1.2em 0" }}>
 
@@ -66,14 +58,14 @@ const Footer = () => {
           component={"a"}
           target="_blank"
           rel="noreferrer noopener"
-          href="https://satoruakiyama.com"
+          href="#"
           justify="center"
           style={{
             textDecoration: "none",
           }}
         >
           <Typography className={classes.copylight}>
-            &copy;SC Reentry Services
+            &copy;SC Reentry Services 2023
           </Typography>
         </Grid>
       </Container>
